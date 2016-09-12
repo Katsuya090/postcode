@@ -1,0 +1,10 @@
+select * from tokyo where code=1600023;
+select * from tokyo where kana2 = 'ｼﾝｼﾞｭｸｸ' order by code asc limit 10;
+select * from tokyo where kana2 = 'ｼﾝｼﾞｭｸｸ' order by code asc limit 10,10;
+select * from tokyo where kana2 like "ｼ%";
+select * from tokyo where concat(kana2,char(0),kana3,char(0),address1,char(0),address2,char(0),address3) like 'ｼﾝｼﾞｭｸ%';
+select * from tokyo where kana2 = 'ｼﾝｼﾞｭｸｸ' or kana2 = 'ｼﾌﾞﾔｸ' or kana2 = 'ｾﾀｶﾞﾔｸ';
+select * from tokyo where kana1 = 'ﾄｳｷｮｳﾄ' and kana2 = 'ｼﾝｼﾞｭｸｸ' and kana3 = 'ｷﾀﾏﾁ';
+select count(code) from tokyo where kana2 = 'ｼﾝｼﾞｭｸｸ';
+update tokyo set address3 = '' where adress3 = '以下に掲載がない場合';
+delete from tokyo where kana2 not in('ｼﾝｼﾞｭｸｸ');
